@@ -1,0 +1,4 @@
+Mathematics: 50(l) 100(pr) -
+Economics: 30(l) 20(pr) 10(lab)
+English: - 30(pr) -
+Physics: 100(l) - 20(lab)
