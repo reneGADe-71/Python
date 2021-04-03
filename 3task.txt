@@ -1,0 +1,4 @@
+Sorokin 20000
+Petrov 15000
+Ivanov 25000
+Repin 18000
