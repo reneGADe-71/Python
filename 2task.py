@@ -1,19 +1,11 @@
 class Coat:
     def __init__(self, v):
-        self.v = v
-        self.square_c = self.v / 6.5 + 0.5
-
-    def __str__(self):
-        return f"Ткань на пальто {self.square_c}"
+        self.square_c = v / 6.5 + 0.5
 
 
 class Suit:
     def __init__(self, h):
-        self.h = h
-        self.square_s = self.h * 2 + 0.3
-
-    def __str__(self):
-        return f"Ткань на костюм {self.square_s}"
+        self.square_s = h * 2 + 0.3
 
 
 class Clothes:
@@ -29,12 +21,20 @@ class Clothes:
 
     @property
     def square(self):
-        main_square = (self.v1 / 6.5 + 0.5) + (self.v2 * 2 + 0.3)
-        return f"Сумма ткани {main_square}"
+        main_square1 = 0
+        main_square2 = 0
+        for v1 in self.v1:
+            main_square1 = main_square1 + v1.square_c
+        for v2 in self.v2:
+            main_square2 = main_square2 + v2.square_s
+        main_square = main_square1 + main_square2
+        return f"Итоговый расход ткани: {main_square}"
 
 
-coat = Coat(13)
-suit = Suit(1)
-print(coat)
-print(suit)
-print(Clothes.square)
+clothes = Clothes()
+clothes.add_coat(6.5)
+clothes.add_coat(13)
+clothes.add_suit(0.35)
+clothes.add_suit(0.85)
+
+print(clothes.square)
